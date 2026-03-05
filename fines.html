@@ -4,61 +4,66 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>University Library | Fines</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="description" content="Fines – University Library lost books and fine payment records." />
+    <title>Fines – University Library</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">📚 University Library<span>Knowledge &amp; Learning Hub</span></div>
-        <nav>
-            <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="index.html#categories">📚 Categories</a></li>
-                <li><a href="students.html">👩‍🎓 Students</a></li>
-                <li><a href="fines.html" class="active">💰 Fines</a></li>
-                <li><a href="contact.html">☎ Contact</a></li>
-                <li class="nav-logout"><a href="#">🚪 Logout</a></li>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a class="nav-logo" href="index.html">
+                <div class="nav-logo-icon">📚</div>
+                <div class="nav-logo-text">University Library<span>Knowledge &amp; Learning Hub</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="fines.html" class="active">Fines</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-logout">Logout</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- PAGE HEADER -->
-    <section class="page-header">
-        <h1>💰 Lost Books &amp; Fine History</h1>
-        <p>Track lost book reports, outstanding fines, and payment records.</p>
-    </section>
+    <div class="page-header">
+        <span class="page-header-emoji">💰</span>
+        <h1>Lost Books &amp; Fine History</h1>
+        <p>Track lost book reports, outstanding fines, and payment records</p>
+        <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
 
-    <!-- SUMMARY STATS -->
-    <section class="section">
+    <!-- STATS -->
+    <div class="section">
         <div class="stat-grid">
             <div class="stat-box">
-                <div class="num" style="color:#dc2626;">₹2,750</div>
+                <div class="num" style="color: #dc2626;">₹2,750</div>
                 <div class="lbl">Outstanding Fines</div>
             </div>
             <div class="stat-box">
-                <div class="num" style="color:#16a34a;">₹8,400</div>
+                <div class="num" style="color: #16a34a;">₹8,400</div>
                 <div class="lbl">Collected Fines</div>
             </div>
             <div class="stat-box">
-                <div class="num" style="color:#d97706;">14</div>
+                <div class="num" style="color: #d97706;">14</div>
                 <div class="lbl">Lost Books</div>
             </div>
             <div class="stat-box">
-                <div class="num" style="color:#1a2e6e;">9</div>
+                <div class="num">9</div>
                 <div class="lbl">Unpaid Cases</div>
             </div>
         </div>
 
-        <!-- Fine Details Table -->
-        <h2 style="margin-bottom:6px; color:#1b2838;">Fine Details — Lost Books</h2>
-        <p style="font-size:13px; color:#777; margin-bottom:14px;">
-            <span style="background:#fee2e2; padding:2px 8px; border-radius:4px; font-size:12px;">Red = Unpaid</span>
-            &nbsp;
-            <span style="background:#d1fae5; padding:2px 8px; border-radius:4px; font-size:12px;">Green = Paid</span>
-        </p>
+        <h2>Fine Details — Lost Books</h2>
+        <p class="sub">Books reported lost by students with fine status</p>
+        <div class="legend">
+            <span class="red">Red = Unpaid</span>
+            <span class="green">Green = Paid</span>
+        </div>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -177,12 +182,9 @@
                 </tbody>
             </table>
         </div>
-    </section>
 
-    <!-- FINE HISTORY -->
-    <section class="section gray">
-        <h2 style="margin-bottom:6px; color:#1b2838;">📜 Student Fine History — Late Returns</h2>
-        <p style="font-size:13px; color:#777; margin-bottom:14px;">Late return fine: ₹5 per book per day overdue.</p>
+        <h2 style="margin-top: 40px;">Student Fine History — Late Returns</h2>
+        <p class="sub">Late return fine: ₹5 per book per day overdue</p>
         <div class="table-wrap">
             <table>
                 <thead>
@@ -211,7 +213,7 @@
                     <tr class="row-unpaid">
                         <td>2</td>
                         <td>Nisha Verma</td>
-                        <td>IT by Stephen King</td>
+                        <td>It by Stephen King</td>
                         <td>10 Jan 2026</td>
                         <td>28 Jan 2026</td>
                         <td>18</td>
@@ -271,32 +273,11 @@
                 </tbody>
             </table>
         </div>
-        <p style="font-size:12px; color:#888; margin-top:12px;">⚠ Students with unpaid fines cannot borrow additional
-            books until dues are cleared.</p>
-    </section>
+        <p class="note">⚠ Students with unpaid fines cannot borrow additional books until dues are cleared.</p>
+    </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <p>📚 University Library</p>
-                <small>Your gateway to knowledge since 1985.</small>
-            </div>
-            <div class="footer-links">
-                <h4>Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="students.html">Students</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© 2026 University Library. Designed for Library Management System.</span>
-            <div><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
-        </div>
+    <footer>&copy; 2025 <strong>University Library</strong> – Knowledge &amp; Learning Hub. All rights reserved.
     </footer>
-
 </body>
 
 </html>
