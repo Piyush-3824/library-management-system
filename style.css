@@ -565,57 +565,199 @@ footer strong {
 }
 
 /* ══════════════════════════════════════════
-   RESPONSIVE
+   HAMBURGER MENU (CSS-only)
+══════════════════════════════════════════ */
+.hamburger-toggle {
+  display: none;
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  flex-shrink: 0;
+}
+
+.hamburger-btn span {
+  display: block;
+  height: 2.5px;
+  background: #1a3c6e;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger to X when open */
+.hamburger-toggle:checked + .nav-inner .hamburger-btn span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.hamburger-toggle:checked + .nav-inner .hamburger-btn span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-toggle:checked + .nav-inner .hamburger-btn span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ══════════════════════════════════════════
+   TABLET  (≤ 768 px)
 ══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
+
+  /* ── Navbar ── */
+  .navbar {
+    height: auto;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .books-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
-  }
+  .hamburger-btn { display: flex; }
 
-  .cat-thumb {
-    height: 160px;
-  }
-
-  .book-cover {
-    height: 190px;
-  }
-
-  .hero {
-    padding: 52px 16px 48px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .section {
-    padding: 40px 16px;
+  .nav-inner {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .nav-links {
-    flex-wrap: wrap;
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0 14px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 8px;
   }
+
+  .hamburger-toggle:checked + .nav-inner .nav-links {
+    display: flex;
+  }
+
+  .nav-links li { width: 100%; }
 
   .nav-links a {
-    padding: 6px 10px;
-    font-size: 0.80rem;
+    display: block;
+    padding: 11px 14px;
+    font-size: 0.92rem;
+    border-radius: 8px;
   }
+
+  .nav-links .btn-logout {
+    display: inline-block;
+    width: auto;
+    margin-top: 4px;
+    margin-left: 14px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 48px 16px 44px;
+  }
+
+  .hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: 8px;
+  }
+
+  .stat-pill {
+    font-size: 0.80rem;
+    padding: 7px 14px;
+  }
+
+  /* ── Grids ── */
+  .category-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+
+  .cat-thumb { height: 150px; }
+  .book-cover { height: 180px; }
+
+  /* ── Section ── */
+  .section { padding: 36px 16px; }
+
+  .section-header { margin-bottom: 28px; }
+  .section-header h2 { font-size: 1.6rem; }
+
+  /* ── Page header ── */
+  .page-header { padding: 40px 16px 36px; }
+  .page-header h1 { font-size: 1.8rem; }
+  .page-header-emoji { font-size: 2.4rem; }
+
+  /* ── Tables ── */
+  tbody td, thead th { padding: 10px 12px; font-size: 0.80rem; }
+
+  /* ── Forms ── */
+  .form-row { grid-template-columns: 1fr; gap: 14px; }
 }
 
+/* ══════════════════════════════════════════
+   MOBILE  (≤ 480 px)
+══════════════════════════════════════════ */
 @media (max-width: 480px) {
+
+  /* ── Hero ── */
+  .hero { padding: 36px 14px 32px; }
+  .hero h1 { font-size: 1.55rem; }
+  .hero-badge { font-size: 0.72rem; padding: 5px 14px; }
+
+  /* ── Grids — 2 columns ── */
   .category-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .books-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
+
+  .cat-thumb { height: 130px; }
+  .book-cover { height: 160px; }
+
+  .cat-body { padding: 10px 12px; }
+  .cat-body h3 { font-size: 0.82rem; }
+  .cat-count { font-size: 0.72rem; }
+  .cat-arrow { width: 24px; height: 24px; font-size: 0.72rem; }
+
+  .book-body { padding: 10px 12px; }
+  .book-body h4 { font-size: 0.82rem; }
+  .book-author { font-size: 0.72rem; }
+
+  /* ── Logo text ── */
+  .nav-logo-text { font-size: 0.80rem; }
+
+  /* ── Section ── */
+  .section { padding: 28px 14px; }
+  .section-header h2 { font-size: 1.35rem; }
+
+  /* ── Page header ── */
+  .page-header { padding: 32px 14px 28px; }
+  .page-header h1 { font-size: 1.5rem; }
+
+  /* ── Stat grid ── */
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+
+  /* ── Footer ── */
+  footer { font-size: 0.76rem; padding: 18px 14px; }
 }
 
 /* ══════════════════════════════════════════
