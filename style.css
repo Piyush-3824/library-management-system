@@ -1086,3 +1086,187 @@ tbody td {
   color: #9ca3af;
   margin-top: 10px;
 }
+
+/* ══════════════════════════════════════════
+   LARGE DESKTOP  (≥ 1200 px)
+   Wider grids for big screens
+══════════════════════════════════════════ */
+@media (min-width: 1200px) {
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ══════════════════════════════════════════
+   TABLET LANDSCAPE  (≤ 900 px)
+══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2.1rem; }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  /* Tables: allow horizontal scroll, keep all data readable */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  tbody td, thead th {
+    white-space: nowrap;
+  }
+}
+
+/* ══════════════════════════════════════════
+   MOBILE PORTRAIT  (≤ 600 px)
+══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  /* ── Hero ── */
+  .hero { padding: 40px 14px 36px; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero p  { font-size: 0.92rem; }
+
+  /* ── Hero stats — wrap tightly ── */
+  .hero-stats { gap: 6px; }
+  .stat-pill  { font-size: 0.76rem; padding: 6px 12px; }
+
+  /* ── Section ── */
+  .section { padding: 30px 14px; }
+  .section-header h2 { font-size: 1.45rem; }
+
+  /* ── Page header ── */
+  .page-header { padding: 36px 14px 32px; }
+  .page-header h1 { font-size: 1.6rem; }
+  .page-header-emoji { font-size: 2.6rem; }
+
+  /* ── Grids: 2 columns ── */
+  .category-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .cat-thumb  { height: 130px; }
+  .book-cover { height: 155px; }
+
+  /* ── Contact + Info: 1 column ── */
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Stat boxes: 2 columns ── */
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .stat-box .num { font-size: 1.6rem; }
+  .stat-box .lbl { font-size: 0.78rem; }
+
+  /* ── Forms: 1 column ── */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-wrap { padding: 20px 16px; }
+
+  /* ── Btn: full width on forms ── */
+  .form-wrap .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Tables: compact ── */
+  tbody td, thead th {
+    padding: 9px 10px;
+    font-size: 0.78rem;
+  }
+
+  /* ── Footer ── */
+  footer { font-size: 0.78rem; padding: 18px 12px; }
+
+  /* ── Nav logo shrink ── */
+  .nav-logo-text { max-width: 160px; font-size: 0.80rem; }
+}
+
+/* ══════════════════════════════════════════
+   ULTRA-SMALL PHONE  (≤ 360 px)
+══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  /* ── Single column everywhere ── */
+  .category-grid,
+  .books-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-thumb  { height: 160px; }
+  .book-cover { height: 200px; }
+
+  /* ── Hero ── */
+  .hero h1 { font-size: 1.4rem; }
+  .hero-badge { display: none; }
+
+  /* ── Page header ── */
+  .page-header h1 { font-size: 1.3rem; }
+  .page-header-emoji { font-size: 2rem; }
+
+  /* ── Nav logo: hide subtitle ── */
+  .nav-logo-text span { display: none; }
+  .nav-logo-icon { width: 36px; height: 36px; font-size: 18px; }
+
+  /* ── Section ── */
+  .section { padding: 22px 12px; }
+  .section-header h2 { font-size: 1.2rem; }
+
+  /* ── Stat box ── */
+  .stat-box { padding: 18px 14px; }
+  .stat-box .num { font-size: 1.4rem; }
+
+  /* ── Forms ── */
+  .form-wrap { padding: 16px 12px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea { font-size: 0.82rem; padding: 9px 12px; }
+
+  /* ── Back button ── */
+  .btn-back { font-size: 0.80rem; padding: 8px 16px; }
+
+  /* ── Footer ── */
+  footer { font-size: 0.72rem; padding: 14px 10px; }
+}
